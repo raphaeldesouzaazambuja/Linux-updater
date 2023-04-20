@@ -60,10 +60,30 @@ then
     echo "------------------------------------cleaning-----------------------------------";
 
     sudo pacman -Scc
-    sudo pacman -Rns
-   
+    
     read -p "-------------------------------Press start to finish-------------------------------";
     clear
 
-    exit 1
+    if $(which yay > /dev/null);
+    then
+        clear
+        echo "------------------------------------updating------------------------------------";
+
+        sudo yay -Syyuu
+
+        echo " ";
+        read -p "------------------------------Press start to continue------------------------------";
+        clear
+
+        echo "------------------------------------cleaning-----------------------------------";
+
+        sudo yay -Scc
+
+        read -p "-------------------------------Press start to finish-------------------------------";
+        clear
+
+        exit 1
+    else
+        exit 1
+    fi
 fi
