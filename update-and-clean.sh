@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $(which apt > /dev/null) ] || [ $(which dpkg > /dev/null) ]; then
+if [ $(which apt < /dev/null) ] || [ $(which dpkg < /dev/null) ]; then
   clear
   echo "Starting system update..."
 
