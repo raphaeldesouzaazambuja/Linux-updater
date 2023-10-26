@@ -19,7 +19,6 @@ if [ $(which apt < /dev/null) ] || [ $(which dpkg < /dev/null) ]; then
   sudo apt autoclean -y
   sudo apt autoremove -y
   sudo apt autopurge -y
-  sudo find / -type d -empty -not -path "/home/*" -exec rmdir {} \;
 
   echo "The system has been successfully updated and cleaned."
 else
